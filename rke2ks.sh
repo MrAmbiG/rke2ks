@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo ls
+echo "'run this as a sudo or root user 'sudo bash rke2ks.sh'"
 echo 'getting the latest kubectl binary'
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 echo 'got it'
