@@ -4,10 +4,8 @@
 
 ## Add more worker nodes
 - write config.yaml as following <br>
-`
-token: K101ad4d209b9d453c2de43a7aed07ca8cbf4b6effa4c13cfedc1c7b054c4c4729a::server:e20bdc7a1789d576a1334fee0d65df6b # /var/lib/rancher/rke2/server/token from master1 <br>
-server: https://?master-nod-ip?:9345
-`
+`token: K101ad4d209b9d453c2de43a7aed07ca8cbf4b6effa4c13cfedc1c7b054c4c4729a::server:e20bdc7a1789d576a1334fee0d65df6b # /var/lib/rancher/rke2/server/token from master1` <br>
+`server: https://?master-nod-ip?:9345`  <br>
 - sudo su -
 - cd /home/?useraccount?> # user account is usually k8sprod or master, wherever you have copied the config.yaml
 - mkdir -p /etc/rancher/rke2/
