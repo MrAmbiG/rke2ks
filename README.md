@@ -2,6 +2,11 @@
 * bootstrap a single node k8s cluster via rke2 *
 - sudo bash rke2ks.sh
 
+# What is included?
+- RKE2 single node scalable cluster
+- metallb loadbalancer (without an ip pool)
+- nginx ingress controller (default namespace)
+
 ## Add more worker nodes
 - write config.yaml as following <br>
 `token: K101ad4d209b9d453c2de43a7aed07ca8cbf4b6effa4c13cfedc1c7b054c4c4729a::server:e20bdc7a1789d576a1334fee0d65df6b # /var/lib/rancher/rke2/server/token from master1` <br>
