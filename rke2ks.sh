@@ -13,6 +13,8 @@ sleep 10s
 echo "export KUBECONFIG=/etc/rancher/rke2/rke2.yaml" >> ~/.bashrc
 echo "export PATH=$PATH:/var/lib/rancher/rke2/bin" >> ~/.bashrc
 echo "export PATH=$PATH:/usr/bin/kubectl" >> ~/.bashrc
+echo 'write-kubeconfig-mode: "0644"' >> /etc/rancher/rke2/rke2.yaml
+echo 'disable: rke2-ingress-nginx' >> /etc/rancher/rke2/rke2.yaml
 chmod 777 /etc/rancher/rke2/rke2.yaml
 chmod 777 /usr/bin/kubectl
 chmod +x /usr/bin/kubectl
