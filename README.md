@@ -15,3 +15,6 @@
 - systemctl enable rke2-agent.service
 - systemctl start rke2-agent.service
 * repeat the same for every new worker node *
+
+
+sed -zi '/write-kubeconfig-mode: "06744"/!s/$/\nwrite-kubeconfig-mode: "06744"/' rke2.yaml

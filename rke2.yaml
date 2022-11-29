@@ -1,3 +1,2 @@
 write-kubeconfig-mode: "0644"
-disable:
-  - rke2-ingress-nginx
+disable: rke2-ingress-nginx
