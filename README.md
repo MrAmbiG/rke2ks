@@ -6,6 +6,7 @@
 - RKE2 single node scalable cluster
 - metallb loadbalancer (without an ip pool)
 - nginx ingress controller (default namespace)
+- helm3
 
 ## Add more worker nodes
 - write config.yaml as following <br>
