@@ -15,3 +15,7 @@
 - systemctl enable rke2-agent.service
 - systemctl start rke2-agent.service
 * repeat the same for every new worker node *
+
+
+--------------------
+grep -qxF 'export KUBECONFIG=/etc/rancher/rke2/rke22.yaml' rke2.yaml || echo 'export KUBECONFIG=/etc/rancher/rke2/rke2.yaml' >> rke2.yaml
