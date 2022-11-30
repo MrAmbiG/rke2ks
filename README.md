@@ -7,6 +7,7 @@
 - metallb loadbalancer (without an ip pool)
 - nginx ingress controller (default namespace)
 - helm3
+- kubectl
 
 ## Add more worker nodes
 - write config.yaml as following <br>
