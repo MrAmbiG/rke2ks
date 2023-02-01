@@ -27,6 +27,6 @@ source ~/.bashrc
 echo 'Deploying metallb loadbalancer'
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.13.7/config/manifests/metallb-native.yaml
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-helm upgrade -i ingress-nginx ingress-nginx/ingress-nginx --set "controller.kind=daemonset"
-Echo 'create and apply an ip pool for your on prem metallb load balancer as seen at'
+helm upgrade -i ingress-nginx ingress-nginx/ingress-nginx
+echo 'create and apply an ip pool for your on prem metallb load balancer as seen at'
 echo 'https://metallb.universe.tf/configuration/#defining-the-ips-to-assign-to-the-load-balancer-services'
