@@ -13,9 +13,7 @@ systemctl enable rke2-server.service
 systemctl start rke2-server.service
 echo 'waiting for 11 seconds'
 sleep 10s
-sed -zi '/export KUBECONFIG=/etc/rancher/rke2/rke2.yaml/!s/$/\nexport KUBECONFIG=/etc/rancher/rke2/rke2.yaml/' ~/.bashrc
-sed -zi '/export PATH=$PATH:/var/lib/rancher/rke2/bin/!s/$/\nexport PATH=$PATH:/var/lib/rancher/rke2/bin/' ~/.bashrc
-sed -zi '/export PATH=$PATH:/usr/bin/kubectl/!s/$/\nexport PATH=$PATH:/usr/bin/kubectl/' ~/.bashrc
+grep -qxF 'KUBECONFIG=/etc/rancher/rke2/rke2.yaml' ~/.bashrc || echo 'KUBECONFIG=/etc/rancher/rke2/rke2.yaml' >> ~/.bashrc
 chmod 777 /etc/rancher/rke2/rke2.yaml
 chmod 777 /usr/bin/kubectl
 chmod +x /usr/bin/kubectl
