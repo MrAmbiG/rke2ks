@@ -1,4 +1,17 @@
 #!/bin/bash
+if [[ "1.23.16" == "$1" ]]; then
+    k8s_version="v1.23.16+rke2r1"
+    echo "selected k8s version: $k8s_version"
+elif [[ "1.24.10" == "$1" ]]; then
+    k8s_version="v1.24.10+rke2r1"
+    echo "selected k8s version: $k8s_version"
+elif [[ "1.25.6" == "$1" ]]; then
+    k8s_version="v1.25.6+rke2r1"
+    echo "selected k8s version: $k8s_version"
+else
+   k8s_version="v1.26.1+rke2r1"
+   echo "selected k8s version: $k8s_version"
+fi
 echo "'run this as a sudo or root user 'sudo bash rke2ks.sh'"
 echo 'getting the latest kubectl binary'
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
@@ -8,7 +21,7 @@ echo 'getting rke2 binary'
 mkdir -p /etc/rancher/rke2
 echo 'write-kubeconfig-mode: "0644"' >> /etc/rancher/rke2/config.yaml
 echo 'disable: rke2-ingress-nginx' >> /etc/rancher/rke2/config.yaml
-curl -sfL https://get.rke2.io | INSTALL_RKE2_VERSION=v1.21.14+rke2r1 sh -
+curl -sfL https://get.rke2.io | INSTALL_RKE2_VERSION=$k8s_version sh -
 systemctl enable rke2-server.service
 systemctl start rke2-server.service
 echo 'waiting for 11 seconds'
