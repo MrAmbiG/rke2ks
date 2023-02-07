@@ -11,6 +11,7 @@ elif [[ "1.25.6" == "$1" ]]; then
     k8s_version="v1.25.6+rke2r1"
     echo "selected k8s version: $k8s_version"
 else
+    # default version (latest stable)
    k8s_version="v1.26.1+rke2r1"
    echo "selected k8s version: $k8s_version"
 fi
