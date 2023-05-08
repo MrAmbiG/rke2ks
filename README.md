@@ -18,7 +18,8 @@
 - mkdir -p /etc/rancher/rke2/
 - cp config.yaml /etc/rancher/rke2/config.yaml # their respective config.yaml
 - cp registries.yaml /etc/rancher/rke2/ # copy registry file
-- curl -sfL https://get.rke2.io | INSTALL_RKE2_TYPE="agent" INSTALL_RKE2_VERSION=v1.21.14+rke2r1 sh -
+- choose a release version that you want from https://github.com/rancher/rke2/releases and set INSTALL_RKE2_VERSION accordingly.
+- curl -sfL https://get.rke2.io | INSTALL_RKE2_TYPE="agent" INSTALL_RKE2_VERSION=v1.27.1+rke2r1 sh -
 - systemctl enable rke2-agent.service
 - systemctl start rke2-agent.service
 * repeat the same for every new worker node *
